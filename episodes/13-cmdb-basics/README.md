@@ -2,9 +2,9 @@
 
 Paths: A D
 
-In this episode you record Priya's laptop and the Wi-Fi controller as configuration items, connect them, and link Priya's incident to the laptop. An incident says that the Wi-Fi is down, but not on which laptop, and IT does not know which controller that laptop connects to because nothing records the connection. The CMDB keeps the things IT looks after and how they connect. This is the last episode of Season 1.
+In this episode you record Priya's laptop and the Wi-Fi controller as configuration items, connect them, and link Priya's incident to the laptop. An incident says that the Wi-Fi is down, but not on which laptop, and IT does not know which controller that laptop connects to because nothing records the connection. The CMDB keeps the things IT looks after and how they connect. If you know Salesforce, an asset is a record of an item a customer has purchased. Here, our configuration items record these IT devices and how they connect. This is the last episode of Season 1.
 
-New terms: configuration item (CI), CMDB, class, relationship, Relationship Editor, dependency view, Affected CIs.
+New terms: configuration item (CI), CMDB, class, relationship, Relationship Editor, parent and child, Affected CIs.
 
 ## Before you start
 
@@ -13,36 +13,36 @@ New terms: configuration item (CI), CMDB, class, relationship, Relationship Edit
 
 ## Steps
 
-1. Open the All menu, choose Configuration, then Computers. Each row is a configuration item (CI), one thing that IT looks after. Together they live in the CMDB, the configuration management database. Computer is one class of CI, a kind of CI with its own fields. These are sample computers that came with the instance. Click New.
-2. Create Priya's laptop:
+1. Open the All menu and type `Computers` in its filter. Under Configuration, click Computers (the instance can be slow, so wait for the list). Each row is a configuration item (CI), one thing that IT looks after. Together they live in the CMDB, the configuration management database. Computer is one class of CI, one kind of CI; you will see that another kind has a different form. These are sample computers that came with the instance. Click New.
+2. Create Priya's laptop. Click in the Name field and type the values:
 
    | Field | Value |
    |---|---|
    | Name | ARC-LT-0142 |
    | Serial number | SN-ARC-0142 |
-   | Assigned to | Priya Nair |
+   | Assigned to | Priya Nair (type `Priya`, then pick her from the list) |
 
-   Click Submit. The list now counts one more computer (856 in the video).
-3. The controller is not a computer, so it needs a different class. Open the All menu, type `Network Gear` and under Configuration choose Network Gear. Click New. This form has other fields, such as Device type, Ports, Channels and Firmware, because the class decides which fields a CI has.
-4. Set Name to `ARC-WLC-01`, the Wi-Fi controller, and click Submit. It is first in the list of network gear.
-5. Open the All menu, choose Computers again, and type `ARC-LT` in the Name search box. Open ARC-LT-0142. Related Items, near the middle of the form, is where this CI shows its connections.
-6. A relationship is a named link between two CIs. Click the plus in Related Items to open the Relationship Editor. The first suggested type, `Depends on::Used by`, is already selected. Change the class filter from Computer to Network Gear and click Run filter. Tick ARC-WLC-01 and click the plus above the relationships. The new row reads Depends on, Used by, parent ARC-LT-0142, child ARC-WLC-01.
-7. Click Save and Exit. ServiceNow asks you to confirm because this changes data in the CMDB. Click OK.
-8. Back on the laptop, Related Items shows the link: Depends on, Used by, Network Gear, ARC-WLC-01. Click the dependency view icon next to the plus. The map shows ARC-LT-0142 joined by a line to ARC-WLC-01.
-9. Open the All menu, filter for `Incident`, open the list and open Priya's Wi-Fi incident (INC0010009 in the video). Type `ARC-LT-0142` in Configuration item and choose the laptop. Save the incident.
-10. Click the small information icon next to Configuration item. The preview card shows the laptop's name, its serial number and Priya as the person it is assigned to. An agent reaches the laptop from the incident in one click.
-11. Open the laptop from the card. The Computer form has no list of incidents, so go back to the incident and open its Affected CIs tab, under Related Links. One CI is listed: ARC-LT-0142. The controller is not on the incident. It is linked to the laptop, and the laptop is linked to the incident, so the link to the controller is indirect.
+   The other fields can stay empty for now. Click Submit. The list now counts one more computer (856 in the video).
+3. The controller is not a computer, so it needs a different class. Open the All menu, type `Network Gear` in its filter and under Configuration click Network Gear. The Class column shows that this list holds other classes too, such as IP Router and IP Switch. Click New.
+4. Type `ARC-WLC-01` in Name, the Wi-Fi controller. This form has other fields, such as Device type, Ports, Channels and Firmware, which the Computer form did not have. Click Submit. It is first in the list of network gear.
+5. Open the All menu, type `Computers` and click Computers again. Type `ARC-LT` in the Name search box under the column names. The list narrows to ARC-LT-0142; open it. Related Items, near the middle of the form, is where this CI shows its connections.
+6. A relationship is a named link between two CIs, and the Relationship Editor creates it. Click the plus in Related Items. At the top the editor suggests relationship types, and the first one, `Depends on::Used by (Parent)`, is already selected. The word Parent in brackets means the CI you opened, the laptop, is the parent. For this example the laptop depends on the controller, and the reverse description is that the controller is used by the laptop. Change the class filter from Computer to Network Gear and click Run filter. Tick ARC-WLC-01 and click the plus above the relationships. The new row reads Depends on::Used by, parent ARC-LT-0142, child ARC-WLC-01.
+7. Click Save and Exit. ServiceNow shows "Save Confirmation: This will change data in the CMDB, do you want to continue?" Click OK.
+8. Back on the laptop, Related Items shows the link: Depends on::Used by (parent), Network Gear, ARC-WLC-01. Click the icon next to the plus: a map opens with ARC-LT-0142 joined by a line to ARC-WLC-01.
+9. Open the All menu, type `Incident` in its filter and under Incident click All. Find Priya's Wi-Fi incident (INC0010009 in the video) and open it. The Configuration item field holds one CI for the incident. Type `ARC-LT-0142`, choose the laptop from the list, and save the incident.
+10. Click the small information icon next to the field. The preview card shows the laptop's name, its serial number and Priya as the person it is assigned to. An agent reaches the laptop from the incident in one click.
+11. Scroll down to Related Links and click the Affected CIs tab. One CI is listed: ARC-LT-0142, the same laptop as in the Configuration item field. The controller is not on the incident. It is related to the laptop, and the laptop is linked from the incident, so the incident reaches the controller only through the laptop.
 
-Result: two CIs, the relationship between them, and the incident pointing at the laptop. Priya, her laptop and the controller are now records that point at each other.
+Result: the laptop is assigned to Priya, related to the controller, and linked from her incident.
 
 ## Your turn
 
-1. Create a practice CI named `PRACTICE laptop 2`, connect it to ARC-WLC-01, and count the nodes on the map. Then delete the practice CI.
-2. On Priya's incident, add ARC-WLC-01 in the Affected CIs tab, compare it with the Configuration item field, and then remove it again.
+1. Open the laptop ARC-LT-0142, click the map icon next to the plus in Related Items, and count the nodes on the map (2 in the video). Then close the map.
+2. Open Priya's incident and compare its Configuration item field with its Affected CIs tab. Both show the laptop.
 
 ## Clean up
 
-Delete `PRACTICE laptop 2` and its relationship. Remove ARC-WLC-01 from the Affected CIs tab. Keep ARC-LT-0142, ARC-WLC-01, their relationship and the incident's Configuration item.
+The exercises create nothing, so there is nothing to remove. Keep ARC-LT-0142, ARC-WLC-01, their relationship and the incident's Configuration item.
 
 ## Previous and next
 

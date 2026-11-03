@@ -4,6 +4,8 @@ Paths: A D
 
 In this episode you create the rest of Arcwell's people, put them in groups, give one group a role, and assign Priya's incident to that group. It matters because a group can own work and a person in it takes it, and giving a role to a group is easier than giving it to each person one at a time. With the old shared mailbox every message reached everyone and people assumed someone else would answer.
 
+In this episode, a group is a set of users that can own work and hold roles, and a role grants access to applications and modules. If you know Salesforce, a user here is close to a User record there, which also has a Manager lookup. A group is close to a public group, a named set of people, though a public group can also contain other groups and roles. A ServiceNow role is closer to a Salesforce permission set than to a Salesforce role, because a Salesforce role is about where someone sits in the data-visibility hierarchy.
+
 New terms: user, manager, group, role, itil, inherited role, form layout, record history.
 
 ## Before you start
@@ -41,9 +43,9 @@ New terms: user, manager, group, role, itil, inherited role, form layout, record
 5. Search the Users list for Priya Nair and open her record. Set Manager to Dana Lee and click Update.
 6. Under User Administration, open Groups and click New. Name `Arcwell Service Desk`, Manager Dana Lee. Click Submit, then open the group.
 7. On the Group Members tab click Edit. Search for Sam Ortiz, add him with the arrow and click Save. A message says a job has been queued and the list stays empty for a moment because a background job makes the change. Soon the tab shows Group Members (1).
-8. On the Roles tab click Edit. Filter for `itil`, move it to the right list and click Save. The same queued message appears. Then the tab shows one role, itil, with Inherits true: members of the group get the role through the group, so anyone you add later gets itil at once.
-9. Open Groups again and click New. Name `Arcwell Lab Team`, Manager Dana Lee. Click Submit and open the group. Its Roles tab is empty because this group has no roles. On Group Members click Edit, add Sam Ortiz and Dana Lee, and click Save. Later episodes use this group.
-10. Go to Users, find Sam Ortiz and open his record. The Roles list is long, so filter it for `itil`. It is there with Inherited true: Sam has the role through Arcwell Service Desk, not because it was given to him directly.
+8. On the Roles tab click Edit. Filter for `itil`, move it to the right list and click Save. The filter keeps the role names from `itil` onward, so pick the `itil` row itself. The same queued message appears and the tab is still empty, so refresh the page. Then the tab shows 1 role, itil, with Inherits true. The docs say that when you give roles to a group instead of to individual users, the members of the group inherit the role. In this instance the change was queued and the role showed after the refresh.
+9. Open Groups again and click New. Name `Arcwell Lab Team`, Manager Dana Lee. Click Submit and open the group. Its Roles tab is empty because this group has no roles. On Group Members click Edit. In the left list search for Sam Ortiz, select him and add him with the arrow, then search again for Dana Lee and add her the same way. Click Save. This is the same queued change as before. Click the Group Members tab again: it reads Group Members (2) and lists Dana Lee and Sam Ortiz. Later episodes use this group.
+10. Open the All menu, type `User Administration` in the filter and click Users. Find Sam Ortiz in the list and open his record. The Roles list is long, so type `itil` in its search box. The list narrows to the itil row. It is there with Inherited true: Sam has the role through Arcwell Service Desk, not because it was given to him directly.
 11. Open the All menu, type `Incident` and choose Open. Open Priya's laptop incident. Assignment group is empty. Type `Arcwell` and choose Arcwell Service Desk from the two matches. Save the form from its header menu.
 12. The Activity area still shows only the first entry. Open the form header menu, choose History, then List. The Assignment group row shows the new value, Arcwell Service Desk, and who changed it.
 
@@ -51,16 +53,18 @@ Result: Dana manages Priya and Sam. Arcwell Service Desk has Sam and the itil ro
 
 ## Your turn
 
-1. Create an invented practice user such as `practice.ravi` and add him to Arcwell Service Desk. Check his Roles list for itil. Then remove him from the group and delete the user.
+1. Create an invented practice user named `PRACTICE Ravi`, user ID `practice.ravi`, and add him to Arcwell Service Desk. Check his Roles list for itil.
 2. Open Arcwell Lab Team, look at its Roles list, and write down why Sam still has itil.
-3. Remove Sam from Arcwell Service Desk and check his Roles list again. Then add him back and check that itil returns.
-4. Change the assignment group of a practice incident and find the change in its history list.
+3. Remove `PRACTICE Ravi` from Arcwell Service Desk and check his Roles list again. Add him back and check that itil returns. Then remove him again and delete the user.
+4. Create an incident with the Short description `PRACTICE printer jam` and write down its number. Assign it to Arcwell Service Desk, find the change in its history list, and delete the incident by its number.
+
+Sam stays in Arcwell Service Desk the whole time: never remove him from it.
 
 ## Clean up
 
-- Exercise 1: remove `practice.ravi` from the group, then delete the user.
-- Exercise 3: make sure Sam is back in Arcwell Service Desk.
-- Exercise 4: delete the practice incident by its number.
+- Exercises 1 and 3: remove `PRACTICE Ravi` from Arcwell Service Desk, then delete the user from the Users list (tick his row, Actions on selected rows, Delete).
+- Exercise 4: open the `PRACTICE printer jam` incident by the number you wrote down, click Delete on the form and confirm.
+- Check that Sam is still in Arcwell Service Desk and that INC0010009 still has Arcwell Service Desk as its assignment group.
 
 Keep Dana, Sam, both groups and the assignment of Priya's incident. The next episodes use them.
 

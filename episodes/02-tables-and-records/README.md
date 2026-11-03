@@ -15,14 +15,14 @@ New terms: table, field (column), record, extends (parent table), Task, referenc
 
 Nothing is changed in this episode. If you edit a value by mistake, close the form without saving.
 
-1. Open the All menu and type `System Definition` in the filter. Choose Tables. The list shows every table on the instance (6,466 in the video; your count may differ). Each row is a table, with its label, name and the table it extends.
-2. Type `incident` in the Name column search. The list jumps to names that start there. Open the row Incident.
+1. Open the All menu and type `System Definition` in the filter. Choose Tables. On this instance the menu opens Tables with a condition already set, Update name is not empty, so the list shows 6,466 entries in the video (your count may differ). Click All in the breadcrumb to remove the condition: the list then shows 6,806 entries. Each row is a table, with its label, name and the table it extends. The video continues from the first view, the one the menu gives you.
+2. Choose Name in the search box above the list and type `incident`. The list jumps to names that start there. Open the row Incident.
 3. On the table definition, note Label `Incident`, Name `incident` and Extends table `Task`. Incident takes some of its fields from Task.
-4. Open the Columns tab. It lists the fields Incident defines itself (92 in the video), each with a Type (Integer, String, Reference and so on) and a Reference column that names another table when the type is Reference. Number, Short description, State and Priority are not in this list because they are inherited from Task.
+4. Open the Columns tab. It lists the fields Incident defines itself (92 in the video), each with a Type (Integer, String, Reference and so on) and a Reference column that names another table when the type is Reference.
 5. Open the row Caller. Its type is Reference and its reference is User. The dictionary entry shows Table Incident, Type Reference, Column label Caller, Column name `caller_id` and Reference User. The label is what people see and the column name is what code uses.
 6. Open the All menu again, type `Incident` and choose Incidents under Service Desk. Open Priya's incident.
-7. Right-click the label Short description and choose Configure Dictionary. The table is Task, not Incident. The type is String and the maximum length is 160. Do not change anything: a change on Task reaches every table that extends it. The Dictionary Overrides tab lists the tables that override this field (7 in the video). An override changes an inherited field for one child table only.
-8. Back on the form, right-click the label State and choose Show Choice List. The list holds the choices of many tables, so type `incident` in the search box of the Table column. The Incident choices are:
+7. Right-click the label Short description and choose Configure Dictionary. The table is Task, not Incident. The type is String and the maximum length is 160. Do not change anything: Short description is inherited from Task.
+8. Back on the form, right-click the label State and choose Show Choice List. The list holds the choices of many tables, so type `incident` in the search box above the list, with Table chosen. The Incident choices are:
 
    | Label | Value |
    |---|---|
@@ -34,18 +34,18 @@ Nothing is changed in this episode. If you edit a value by mistake, close the fo
    | Canceled | 8 |
 
    People read the labels. Scripts and reports can use the values.
+   To go back, press Command and the left bracket (`Cmd+[`), the browser's Back: the unfiltered Choices list returns. Press it once more and the incident form returns.
 9. On the form, click the small information icon next to Caller. A preview card shows the user: User ID priya.nair, first and last name, title Design Engineer and email. A reference is a live link to another record, not a copy of its text.
-10. Open the All menu, type `System Definition` and choose Tables again. Type `task` in the Name search. Task is the first row, and its Extends table is empty, so Task has no parent.
-11. In the Extends table column, filter for `task`. The list shows the tables that extend Task (50 in the video), among them Change Request, Incident and Problem. One parent serves many kinds of record, which is why they share fields such as Short description.
+10. Open the All menu, type `System Definition` and choose Tables again. Choose Name in the search box and type `task`. Task is the first row, and its Extends table is empty, so Task has no parent.
+11. In the Extends table column, filter for `task`. The list shows the tables that extend Task (50 in the video; this step is being re-recorded, so the video and these steps may differ slightly), among them Change Request, Incident and Problem. One parent serves many kinds of record, which is why they share fields such as Short description.
 
 Result: you have seen the Task parent, the Caller dictionary entry, the Caller preview card and the State choices.
 
 ## Your turn
 
 1. Open the dictionary entry of Short description and note its Type and Max length.
-2. Open the choice list of Priority and write down each label and value.
-3. Find three other tables that extend Task.
-4. Open the preview card of the caller on your own incident.
+2. Find 3 other tables that extend Task.
+3. Open the preview card of the caller on your own incident.
 
 ## Clean up
 
