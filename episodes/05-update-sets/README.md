@@ -35,7 +35,7 @@ Result: Arcwell ep05 is Complete with 4 customer updates, the form and the list 
 3. Put Arcwell Site back right under Category (Form Layout, add it, move it up with the arrow, Save), and check that the form shows it again.
 4. Mark `PRACTICE ep05` Complete, and check that Default is current again.
 
-The exact rows in step 2 depend on your instance and were not recorded for this guide, so note what you see instead of matching a list.
+What we saw on our instance (4 Nov 2026), so you can compare: in step 2, `PRACTICE ep05` showed 1 Customer Update, a Form Layout row for the Incident table (INSERT_OR_UPDATE), and no Dictionary or Field Label row, because only the layout changed. After step 3 it still showed 1 row, the form showed Arcwell Site under Category again with Pune kept, and after step 4 the picker showed Default again. Your rows may differ, so note what you see. If the Form Layout menu closes when you move the pointer, hover Configure and move sideways into its submenu before moving down to Form Layout.
 
 ## Clean up
 
