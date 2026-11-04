@@ -1,0 +1,7 @@
+{
+  "rig": "RIG_SYS_ID",
+  "borrower": "BORROWER_SYS_ID",
+  "start_date": "START_DATE",
+  "due_date": "DUE_DATE",
+  "state": "active"
+}

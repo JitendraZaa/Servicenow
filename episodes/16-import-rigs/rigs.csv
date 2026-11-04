@@ -1,0 +1,21 @@
+asset_tag,name,type,state,location
+ARC-RIG-001,Oscilloscope 1,oscilloscope,on_loan,Lab A
+ARC-RIG-002,Oscilloscope 2,oscilloscope,available,Lab A
+ARC-RIG-003,Oscilloscope 3,oscilloscope,available,Lab B
+ARC-RIG-004,Oscilloscope 4,oscilloscope,available,Lab B
+ARC-RIG-005,Thermal chamber 1,thermal_chamber,available,Lab C
+ARC-RIG-006,Thermal chamber 2,thermal_chamber,available,Lab C
+ARC-RIG-007,Thermal chamber 3,thermal_chamber,available,Lab C
+ARC-RIG-008,Thermal chamber 4,thermal_chamber,available,Lab C
+ARC-RIG-009,Test laptop 1,test_laptop,available,Storage
+ARC-RIG-010,Test laptop 2,test_laptop,available,Storage
+ARC-RIG-011,Test laptop 3,test_laptop,available,Storage
+ARC-RIG-012,Test laptop 4,test_laptop,available,Storage
+ARC-RIG-013,Test laptop 5,test_laptop,available,Storage
+ARC-RIG-014,Power supply 1,power_supply,available,Lab A
+ARC-RIG-015,Power supply 2,power_supply,available,Lab A
+ARC-RIG-016,Power supply 3,power_supply,available,Lab B
+ARC-RIG-017,Signal generator 1,signal_generator,available,Lab B
+ARC-RIG-018,Signal generator 2,signal_generator,available,Lab B
+ARC-RIG-019,Signal generator 3,signal_generator,in_repair,Lab A
+ARC-RIG-020,Oscilloscope 5,oscilloscope,available,Lab A
