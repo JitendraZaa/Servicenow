@@ -14,7 +14,7 @@ New terms: notification, condition, recipient, preview, email log.
 
 ## Steps
 
-1. Open the All menu, type `Notifications`, and under System Notification and Email choose Notifications. The list shows the ready-made rules, each with a name, the table it watches and its conditions. Click New.
+1. Open the All menu and type `Notifications` in the filter: the menu lists every match, including portal, mobile and push ones. That is too broad, so clear the filter with the x and type `System Notification` instead. Under System Notification and Email choose Notifications. The list shows the ready-made rules, each with a name, the table it watches and its conditions. Click New.
 2. Name it `Arcwell: incident resolved`. For Table, open the list, type `incident` in its search box and choose Incident. Choose the table before you submit, or the form shows a mandatory fields banner.
 3. Open the When to send tab. Send when is already set to when a record is inserted or updated. Tick Updated. For the condition choose the field Incident state, the operator `is changed to`, and the value Resolved. The rule generates the message when the state of an incident changes to Resolved.
 4. Open the What it will contain tab and fill it in:
