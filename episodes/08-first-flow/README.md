@@ -39,13 +39,13 @@ Result: the flow has a trigger and two actions, and each laptop order now create
 
 ## Your turn
 
-1. Add a Log action after Create Catalog Task and activate the changed flow. Order as Priya, write down the record numbers, complete the new task, then open the flow execution and look at the log.
-2. Deactivate the flow, order once more, and look at the requested item: it has no task.
-3. Remove the Log action, activate the original flow again, and delete or cancel only your numbered practice tasks, requested items and requests.
+1. Open the flow, change the Short description of Create Catalog Task (for example to `Prepare and check replacement laptop`) and activate the changed flow. Order a laptop as Priya, write down the record numbers, and open the new task: its Short description is the new text.
+2. Deactivate the flow, order once more, write down that order's numbers too, and look at the requested item: it has no task.
+3. Change the Short description back to `Prepare replacement laptop`, activate the flow again, and delete or cancel only your numbered test tasks, requested items and requests.
 
 ## Clean up
 
-Remove the Log action if you added one and activate the flow again. Check that its status is Active. Delete or cancel every practice task, requested item and request by the numbers you wrote down. Keep REQ0010002, RITM0010002 and SCTASK0010003 only if you want them as a reference; later episodes order new laptops.
+Check that the Short description is `Prepare replacement laptop` again and that the flow status is Active. Delete or cancel every test task, requested item and request from your own exercise orders, by the numbers you wrote down. Keep REQ0010002, RITM0010002 and SCTASK0010003: they are the episode's reference records and later episodes order new laptops. End any impersonation before you change or clean up anything.
 
 The task route used in the video: on the requested item the delivery plan row is not a link, so open the All menu, type `Tasks`, and under Service Catalog and Open Records choose Tasks (Catalog Tasks). Read the Assignment group on that list.
 
