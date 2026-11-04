@@ -2,7 +2,7 @@
 
 Paths: U A D
 
-In this episode you meet ServiceNow, open your own instance, create a user called Priya Nair and log her first incident, "Laptop cannot connect to Wi-Fi". It matters because every later episode builds on this record: an incident gives a problem a number, an owner and a state, and a user record is what makes a person a caller. At the end Priya exists as a user and her incident is saved and found in the incident list.
+In this episode you meet ServiceNow, open your own instance, create a user called Priya Nair and log her first incident, "Laptop cannot connect to Wi-Fi". It matters because every later episode builds on this record: an incident gives a problem a number and a state, and lets IT track who will handle it, and a user record is what makes a person a caller. At the end Priya exists as a user and her incident is saved and found in the incident list.
 
 New terms: instance, Personal Developer Instance (PDI), incident, user, record, form, field, list. If you know Salesforce: a Salesforce org is a secure, isolated environment for one customer, much like a ServiceNow instance is yours; a list view is the same idea as a list, a filtered list of an object's records; and a record there is one row of data in an object.
 
@@ -12,7 +12,7 @@ Arcwell Engineering is an invented company with 600 people. IT works from a shar
 
 ## Before you start
 
-- A ServiceNow Developer Program account and your own Personal Developer Instance (PDI). ServiceNow offers free PDIs to Developer Program members to learn on (one per member; see ServiceNow's Personal developer instance guide for the conditions). Join on the ServiceNow Developer site (developer.servicenow.com) and request an instance from the page that offers it. Use your own email address and a password only you know.
+- A ServiceNow Developer Program account and your own Personal Developer Instance (PDI). ServiceNow offers free PDIs to Developer Program members to learn on (one per member). Follow ServiceNow's official Personal developer instance guide (https://www.servicenow.com/docs/r/application-development/personal_developer_instance_guide.html) and its Understanding PDIs page (https://www.servicenow.com/docs/r/application-development/understanding_pdis.html) for the conditions, including that an unused instance is reclaimed. The ServiceNow Developer site is developer.servicenow.com. Never request, reset or release an instance you do not own. Use your own email address and a password only you know.
 - The series was recorded on the Brazil release. Menu names and screens can change between releases.
 - You sign in to the instance as `admin`. The admin user is shown as Jitendra Zaa in the videos; yours shows its own name.
 - Do not put real company data in a PDI.
@@ -36,8 +36,8 @@ Arcwell Engineering is an invented company with 600 people. IT works from a shar
 
 The domain example.com is maintained for use as an example in documents, so no real address is used. Priya will not sign in during this lesson, so we do not set a password.
 7. Click Submit. Submit saves a new record and returns to the list, with a message that mentions Priya Nair. (Save keeps the form open.)
-8. Search the Users list for Priya Nair to check she is stored. The row shows priya.nair, her name and email, and when she was created.
-9. Open the All menu again, type `Incident` in the filter, choose Incident, then Create New. An incident is a record that documents a deviation from an expected standard of operation; in ServiceNow's documentation incidents sit under IT Service Management.
+8. Search the Users list for Priya Nair to check she is stored: set the toolbar search to Name, type her name and press Enter. The row shows priya.nair, her name and email, and when she was created.
+9. Open the All menu again, type `Incident` in the filter, choose Incident, then Create New. An incident is a record of something that is not working as expected; in ServiceNow's documentation incidents sit under IT Service Management.
 10. The form fills in a Number for you (INC0010009 in the video; yours may differ). Set the fields:
 
     | Field | Value |
@@ -64,10 +64,10 @@ Result: Priya Nair is in the Users list, and her incident is saved with state Ne
 
 ## Clean up (the fourth exercise, step by step)
 
-1. Open the All menu, type `Incident`, and click Create New to see how the practice incident was made, or go straight to the list: Incident, then All or Open. Type the number of your practice incident in the Number search box under the column heading, so the list shows only that incident.
-2. Open it. Click Delete at the top of the form. The confirmation lists what goes with the incident (in the video: 1 Task SLA). Click the red Delete. The list then says No records to display.
-3. Open the All menu, type `User Administration`, click Users. Click the search box beside Name, type `PRACTICE Ravi`, press Enter. The first row is the practice user.
-4. Tick the box at the start of that row, open Actions on selected rows at the top right, choose Delete. The confirmation lists what goes with the user (in the video: 1 Notification Device and 1 Notification Messages). Click the red Delete.
+1. Open the All menu, type `Incident` in the filter and click Incident, then open All. In the toolbar search, choose Number, type the number of your saved practice incident, and press Enter, so the list shows only that incident.
+2. Open it. Click Delete at the top of the form. The confirmation lists what goes with the incident (related records, such as a Task SLA in the video). Click the red Delete. The list then says No records to display.
+3. Open the All menu, type `User Administration`, click Users. In the toolbar search, with Name chosen, type `PRACTICE Ravi` and press Enter. The first row is the practice user.
+4. Tick the box at the start of that row, open Actions on selected rows at the top right, choose Delete. The confirmation lists what goes with the user (related records, such as notification entries in the video). Click the red Delete.
 5. Deleting the user may open a Notification Messages form. Do not submit it; open the All menu, type `User Administration` again and click Users.
 6. Search the list for `PRACTICE` again. The practice user is gone.
 
